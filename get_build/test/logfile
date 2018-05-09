@@ -1,0 +1,76 @@
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.ms-net.net/emailAddress=root@eseecisav71.emea.ms-net.net
+   i:/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.ms-net.net/emailAddress=root@eseecisav71.emea.ms-net.net
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIEKjCCAxKgAwIBAgICUq0wDQYJKoZIhvcNAQELBQAwgckxCzAJBgNVBAYTAi0t
+MRIwEAYDVQQIDAlTb21lU3RhdGUxETAPBgNVBAcMCFNvbWVDaXR5MRkwFwYDVQQK
+DBBTb21lT3JnYW5pemF0aW9uMR8wHQYDVQQLDBZTb21lT3JnYW5pemF0aW9uYWxV
+bml0MSUwIwYDVQQDDBxlc2VlY2lzYXY3MS5lbWVhLm5zbi1uZXQubmV0MTAwLgYJ
+KoZIhvcNAQkBFiFyb290QGVzZWVjaXNhdjcxLmVtZWEubnNuLW5ldC5uZXQwHhcN
+MTcwNjI2MTMyNDU4WhcNMTgwNjI2MTMyNDU4WjCByTELMAkGA1UEBhMCLS0xEjAQ
+BgNVBAgMCVNvbWVTdGF0ZTERMA8GA1UEBwwIU29tZUNpdHkxGTAXBgNVBAoMEFNv
+bWVPcmdhbml6YXRpb24xHzAdBgNVBAsMFlNvbWVPcmdhbml6YXRpb25hbFVuaXQx
+JTAjBgNVBAMMHGVzZWVjaXNhdjcxLmVtZWEubnNuLW5ldC5uZXQxMDAuBgkqhkiG
+9w0BCQEWIXJvb3RAZXNlZWNpc2F2NzEuZW1lYS5uc24tbmV0Lm5ldDCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAL4MSfM2gHwvY31rSDyy9dj/xN9uaS5X
+P/iuYpMLgDx4PO+2lkPvre8JRds1Z/oJhFuKm4Z+H0MD4rQr1jOT4ygXNQOozyBY
+wQZfjh0EkNHXRlypfZzsJGB4agsDq16/RiVIpI8g5mlEXess+M1+vf00kUiq0nCq
+zjh1f0UsvcU0RXqIAR9ieOhdXMSMBKYzKggPO77HGkz4GYX2G4LW441IMZZ4vY2K
+/T+cw7v721XVYf/TSzgs1RanPxjfCCgy1IR9+gflgPbGw863BN+W3hSbIjnVfBHW
+R8vNpb2Ppd1off2XDHDcqVsGBP6qCsTg10o2sV6mLyxzd0OPS5Q4j1cCAwEAAaMa
+MBgwCQYDVR0TBAIwADALBgNVHQ8EBAMCBeAwDQYJKoZIhvcNAQELBQADggEBAJHd
+QyanGWf+ttGBRkKhvnOX7tmfihYio08JuufLJzwAekcfw//LHurTJJrOQY0wVqMz
+TFPU9DKrP84PVJ6a8RZP/W1kHH3Z4QheKK3bW3+MYkUYHGbUj/I4qqvTUlbyLY1n
+vPSI3FJZOIiK8JenOXxuqtzbS8xxYe9VFwFhhsOZEjV6u9BS7bgbl5N83RI0HQHs
+uWTeqPImdHr4PimQGlR9cWrqf8V3uW8114HlYcIXN9H7Sf7Qjr/dErS6SKgeSiPe
+7zAld/bkLmSYolRseoFuQwEi0n9VmEVkKaKbookiTYJebAQA05mDWQ6dJgWB5+FV
+UY1tUWJI8bN2WqlzMbQ=
+-----END CERTIFICATE-----
+subject=/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.ms-net.net/emailAddress=root@eseecisav71.emea.ms-net.net
+issuer=/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.ms-net.net/emailAddress=root@eseecisav71.emea.ms-net.net
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Server Temp Key: ECDH, P-256, 256 bits
+---
+SSL handshake has read 1761 bytes and written 431 bytes
+---
+New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 312E7923794A68BECB580E35CAF1A0F006285B730F8354F914540948F222B24C
+    Session-ID-ctx: 
+    Master-Key: B9AF2D553A04D9BE4D3ED234216256858E2867543CF244DB95874AA2F1F1917E14F39BAB626250E18152A68354EDD0D5
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 0d 7c 2b 2a 3a c5 56 5b-d3 76 e1 84 1c df d1 71   .|+*:.V[.v.....q
+    0010 - ac fb 31 fa 45 bc ad 7d-be 94 40 d8 7e fa 43 12   ..1.E..}..@.~.C.
+    0020 - 1e 27 81 40 06 6e 25 ea-77 79 a0 0b d8 38 1e ec   .'.@.n%.wy...8..
+    0030 - 53 df 96 f4 e3 34 0c 7b-a2 ca 52 f6 6f d6 4c f5   S....4.{..R.o.L.
+    0040 - 39 53 0f e1 80 f0 f5 b8-1c 50 d0 27 ca 18 86 2b   9S.......P.'...+
+    0050 - 1f 93 b0 bb 89 85 40 89-ae 6e 96 6f 07 ba 5e 79   ......@..n.o..^y
+    0060 - 51 f3 4c 06 37 f7 57 61-8b dd c2 f3 3a 0f 53 98   Q.L.7.Wa....:.S.
+    0070 - 28 78 7e 12 01 7a 4f 0b-c8 25 0e d0 80 f7 1e 2b   (x~..zO..%.....+
+    0080 - ca e6 d8 f5 0e c3 24 70-38 94 4a f1 78 a3 b5 36   ......$p8.J.x..6
+    0090 - ad b9 bc 3e b3 6c 02 b5-f2 3e da 49 37 0d c6 e9   ...>.l...>.I7...
+    00a0 - b4 77 4e 45 a7 24 e6 3f-46 5b 48 d0 f9 b5 8d d2   .wNE.$.?F[H.....
+    00b0 - c2 45 95 67 3c ef c1 ce-1c 15 7f f6 b2 12 bc 03   .E.g<...........
+
+    Start Time: 1523240832
+    Timeout   : 300 (sec)
+    Verify return code: 21 (unable to verify the first certificate)
+---

@@ -1,0 +1,437 @@
+<html>
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=9">
+    <title></title>
+    <link href="/mpp/dynamic/jquery/themes/smoothness/jquery-ui-1.7.1.custom.css?1498454910" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/mpp/dynamic/mpp/calypso.css?1498454910" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/mpp/dynamic/mpp/mpp.css?1500461601" media="screen" rel="stylesheet" type="text/css" />
+    
+    <script src="/mpp/dynamic/jquery/js/jquery-1.4.2.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery-ui-1.7.1.custom.min.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.dataTables.min.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.jeditable.mini.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.simplemodal-1.3.5.min.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.form.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/urlEncode.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.feedback-1.0.1.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.scrollTo-1.4.2.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.tipswift-2.0.1.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery-throttle-1.0.0.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery-misc-plugins.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.disable.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.jqote2.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/list.min.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-helper.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-authorization.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-feedback.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-validator.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-table-search.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-properties.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-delays.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-broadcast-message.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-version-selector.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-user-management.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/lazy-scroll.js?1498454910" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/application.js?1498454910" type="text/javascript"></script>
+    <link href="/mpp/dynamic/stylesheets/jquery.tipswift.css?1498454910" media="screen" rel="stylesheet" type="text/css" />
+    
+    <script style="text/javascript">
+      $.mpp.helper.urlRoot = "/mpp/dynamic";
+    </script>
+</head>
+<body>
+<table class="mainHeader" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="logo"><img alt="Corner_logo" src="/mpp/dynamic/webuif/images/corner_logo.png?1498454910" title="ms logo" /></td>
+    <td class="productInformation">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="family">Merlin Production Pipe</td>
+        </tr>
+        <tr>
+          <td class="name">Project: mus</td>
+        </tr>
+      </table>
+    </td>
+    <td class="timestamp">Thu&nbsp;25.01.2018&nbsp;03:53:54&nbsp;(EET)</td>
+  </tr>
+</table>
+<p> <a href="/mpp/dynamic/">MPP home</a> > <a href="/mpp/dynamic/projects/project?project=mus">mus</a> > <a href="/mpp/dynamic/projects/lab?lab=CloneCLAB2778&amp;project=mus">CloneCLAB2778</a>
+    > <a href="/mpp/dynamic/logs/lab_history?lab=CloneCLAB2778&amp;project=mus">lab action history</a>
+    > Lab action
+</p>
+
+<hr>
+<script style="text/javascript">
+  $.mpp.helper.mppPath = "projects/mus/labs/CloneCLAB2778";
+  $.mpp.helper.logDir =  "action_dir=20180123_080809_498641";
+</script>
+<table>
+    <tr>
+        <td colspan="2">
+            <h3>SmokeOnNetAct report</h3>
+        </td>
+    </tr>
+    <tr valign="top">
+        <td>
+            <div class = "labActionInfo"><p>
+<script style="text/javascript">
+function startTime(){ 
+  var stime = $("#duration").text();
+  if ('' == stime)
+    return 0;
+  var h = parseInt(stime.split(":")[0],10);
+  var m = parseInt(stime.split(":")[1],10);
+  var s = parseInt(stime.split(":")[2],10);
+  var count=0
+  var setTime = function() {
+    if(count == 10) return;
+    count ++;
+    s=s+1;
+    if(s>59)  { s=s-60; m=m+1; }
+    if(m>59)  { m=m-60; h=h+1; }
+    $("#duration").text(checkTime(h)+":"+checkTime(m)+":"+checkTime(s));
+    setTimeout(setTime, 1000)
+  }
+    setTime();    
+};
+function checkTime(i){
+  if(i<10)
+    return i="0"+i;
+  else
+    return i;
+};
+window.onload = startTime();
+
+function preserve_click() {
+    $.post("/mpp/dynamic/logs/log_preserve?preserve=true&project=mus&lab=CloneCLAB2778&action_dir=20180123_080809_498641", { Action: "post" },
+            function (data, textStatus){
+            }, "script");
+};
+function cancel_preserve_click() {
+    $.post("/mpp/dynamic/logs/log_preserve?preserve=false&project=mus&lab=CloneCLAB2778&action_dir=20180123_080809_498641", { Action: "post" },
+            function (data, textStatus){
+            }, "script");
+};
+</script>
+<style type="text/css">
+  div#duration  { display: inline }
+  div#indicator { display: inline }
+</style>
+<table class="tagTable" border="1">
+  <caption><h4>Information&nbsp;(<a href="/mpp/dynamic/logs/stats?mpp_path=logs%2Fmus%2FCloneCLAB2778%2F20180123_080809_498641">Detailed&nbsp;stats</a>)</h4></caption>
+  <tr>
+    <th>Entity</th>
+    <th>Description</th>
+  </tr>
+  <tr class="odd">
+    <td>Action</td>
+    <td><a href="/mpp/dynamic/logs/lab_action?action_dir=20180123_080809_498641&amp;lab=CloneCLAB2778&amp;project=mus">SmokeOnNetAct</a>
+      (<a href="/mpp/dynamic/projects/lab?lab=CloneCLAB2778&amp;project=mus">CloneCLAB2778</a>)</td>
+  </tr>
+  <tr class="even">
+    <td>Description</td>
+    <td> Tests(24/0)</td>
+  </tr>
+  <tr class="odd">
+    <td>Result</td>
+    <td>green</td>
+  </tr>
+  
+  
+  
+  <tr class="even">
+    <td>Start</td>
+    <td>Tue 23.01.2018 08:08:09</td>
+  </tr>
+  <tr class="odd">
+    <td>Duration</td>
+    <td>
+    
+      02:01:05
+    
+    </td>
+  </tr>
+  
+    <tr class="even">
+      <td>Lab action files</td>
+      <td>
+        
+            <a href="/mpp/static/logs/mus/CloneCLAB2778/20180123_080809_498641/">Directory</a>,
+                
+        
+            <a href="/mpp/dynamic/logs/lab_action_log?action_dir=20180123_080809_498641&amp;lab=CloneCLAB2778&amp;project=mus">labaction.log</a>,
+            
+        
+            <a href="/mpp/static/logs/mus/CloneCLAB2778/20180123_080809_498641/statistics.xml">statistics.xml</a>
+                
+        
+      </td>
+    </tr>
+  
+
+  
+      <tr class="odd">
+        <td>Logs Removal Date</td>
+        
+            <td id="log_expired_date">Thu 22.02.2018 10:09:15</td>
+        
+      </tr>
+      <tr class="even">
+        <td>Logs Preservation</td>
+        <td id="log_preservation"><a href="javascript:void(0);" onclick="preserve_click();">Preserve logs for this labaction</a></td>
+      </tr>
+  
+</table>
+</p>
+<p>
+    <table class="tagTable" border="1">
+        <caption><h4>Used RIS components</h4></caption>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Links</th>
+        </tr>
+        </thead>
+        
+            <tr class="odd">
+                <td><a href="/mpp/dynamic/packages/version?component=viis-lab-scripts_development&amp;group=mpp&amp;version=1167_cimps359">mpp/viis-lab-scripts_development/1167_cimps359</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=viis-lab-scripts_development&amp;group=mpp&amp;project=mus&amp;version=1167_cimps359">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="even">
+                <td><a href="/mpp/dynamic/packages/version?component=mpp-scripts&amp;group=mpp&amp;version=907">mpp/mpp-scripts/907</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=mpp-scripts&amp;group=mpp&amp;project=mus&amp;version=907">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="odd">
+                <td><a href="/mpp/dynamic/packages/version?component=mus-collector-ci2.0&amp;group=mus&amp;version=18.0.0.105">mus/mus-collector-ci2.0/18.0.0.105</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=mus-collector-ci2.0&amp;group=mus&amp;project=mus&amp;version=18.0.0.105">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="even">
+                <td><a href="/mpp/dynamic/packages/version?component=product&amp;group=rhel7_errata&amp;version=17.8.0.46">rhel7_errata/product/17.8.0.46</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=product&amp;group=rhel7_errata&amp;project=mus&amp;version=17.8.0.46">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="odd">
+                <td><a href="/mpp/dynamic/packages/version?component=subsystem&amp;group=oss-mpp-cloudlab_hacks&amp;version=16">oss-mpp-cloudlab_hacks/subsystem/16</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=subsystem&amp;group=oss-mpp-cloudlab_hacks&amp;project=mus&amp;version=16">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="even">
+                <td><a href="/mpp/dynamic/packages/version?component=product&amp;group=Oem_Software&amp;version=17.8.0.1">Oem_Software/product/17.8.0.1</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=product&amp;group=Oem_Software&amp;project=mus&amp;version=17.8.0.1">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="odd">
+                <td><a href="/mpp/dynamic/packages/version?component=trunk&amp;group=administration_server_tools&amp;version=1.0.279">administration_server_tools/trunk/1.0.279</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=trunk&amp;group=administration_server_tools&amp;project=mus&amp;version=1.0.279">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="even">
+                <td><a href="/mpp/dynamic/packages/version?component=trunk&amp;group=commissioning_product_tools&amp;version=1.0.374">commissioning_product_tools/trunk/1.0.374</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=trunk&amp;group=commissioning_product_tools&amp;project=mus&amp;version=1.0.374">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="odd">
+                <td><a href="/mpp/dynamic/packages/version?component=trunk&amp;group=commissioning_product_tools_vmware&amp;version=1.0.334">commissioning_product_tools_vmware/trunk/1.0.334</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=trunk&amp;group=commissioning_product_tools_vmware&amp;project=mus&amp;version=1.0.334">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="even">
+                <td><a href="/mpp/dynamic/packages/version?component=trunk&amp;group=commissioning_product_tools_cisupport&amp;version=1.0.112">commissioning_product_tools_cisupport/trunk/1.0.112</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=trunk&amp;group=commissioning_product_tools_cisupport&amp;project=mus&amp;version=1.0.112">Version history</a>
+                </td>
+            </tr>
+        
+    </table>
+
+</p>
+<p>
+<script style="text/javascript">
+function startTime(){ 
+  var stime = $("#sduration").text();
+  if ('' == stime)
+    return 0;
+  var h = parseInt(stime.split(":")[0],10);
+  var m = parseInt(stime.split(":")[1],10);
+  var s = parseInt(stime.split(":")[2],10);
+  var count=0
+  var setTime = function() {
+    if(count == 10) return;
+    count ++;
+    s=s+1;
+    if(s>59)  { s=s-60; m=m+1; }
+    if(m>59)  { m=m-60; h=h+1; }
+    $("#sduration").text(checkTime(h)+":"+checkTime(m)+":"+checkTime(s));
+    setTimeout(setTime, 1000)
+  }
+    setTime();    
+};
+function checkTime(i){
+  if(i<10)
+    return i="0"+i;
+  else
+    return i;
+};
+window.onload = startTime();
+</script>
+<style type="text/css">
+  div#sduration  { display: inline }
+  div#sindicator { display: inline }
+</style>
+    <table class="tagTable" border="1">
+        <caption><h4>Checkpoints</h4></caption>
+        <tr>
+            <th>Event</th>
+            <th>Duration</th>
+        </tr>
+        
+            <tr class="odd">
+                <td>export product files</td>
+                <td>
+                    00:00:01
+                    
+                </td>
+            </tr>
+        
+            <tr class="even">
+                <td>install</td>
+                <td>
+                    01:05:17
+                    
+                </td>
+            </tr>
+        
+            <tr class="odd">
+                <td>sleep before tests</td>
+                <td>
+                    00:10:01
+                    
+                </td>
+            </tr>
+        
+            <tr class="even">
+                <td>Run tests</td>
+                <td>
+                    00:43:24
+                    
+                </td>
+            </tr>
+        
+            <tr class="odd">
+                <td>process logs</td>
+                <td>
+                    00:02:19
+                    
+                </td>
+            </tr>
+        
+        <tr class="total">
+            <td>Total time</td>
+            <td>02:01:05</td>
+        </tr>
+    </table>
+</p>
+<p>
+<table border="0" cellpadding="0" cellspacing="0" class="tagTable robotTable" style="border-color:green;">
+  <caption><h4>Test results (<span class="webActionsContainer"></span>)</h4></caption>
+  <thead>
+  <tr>
+    <th>Server(s)</th>
+    <th>Name</th>
+    <th>Tests</th>
+    <th>Passed</th>
+    <th>Failed</th>
+    <th>Runtime</th>
+    <th>Real time</th>
+  </tr>
+  </thead>
+  <tbody>
+    
+      <tr class="tester total">
+       <td class="tester" valign="top">clab1703node14</td>
+       <td>Total</td>
+       <td class="numeric">24</td>
+       <td class="numeric">24</td>
+       <td class="numeric">0</td>
+       <td>00:41:25</td>
+       <td>00:43:04</td>
+      </tr>
+      
+          
+          
+              <tr class="testrun odd success">
+               <td>&nbsp;</td>
+               <td class="testrun"><a href="/mpp/static/logs/mus/CloneCLAB2778/20180123_080809_498641/cluster-a/clab1703node14/reports/mus-fm_report.html">mus-fm</a></td>
+               <td class="numeric">7</td>
+               <td class="numeric">7</td>
+               <td class="numeric">0</td>
+               <td>00:24:35</td>
+               <td>00:25:24</td>
+              </tr>
+              
+              <tr class="testrun even success">
+               <td>&nbsp;</td>
+               <td class="testrun"><a href="/mpp/static/logs/mus/CloneCLAB2778/20180123_080809_498641/cluster-a/clab1703node14/reports/mus-pm_report.html">mus-pm</a></td>
+               <td class="numeric">4</td>
+               <td class="numeric">4</td>
+               <td class="numeric">0</td>
+               <td>00:06:27</td>
+               <td>00:06:42</td>
+              </tr>
+              
+              <tr class="testrun odd success">
+               <td>&nbsp;</td>
+               <td class="testrun"><a href="/mpp/static/logs/mus/CloneCLAB2778/20180123_080809_498641/cluster-a/clab1703node14/reports/snmp-fm_report.html">snmp-fm</a></td>
+               <td class="numeric">9</td>
+               <td class="numeric">9</td>
+               <td class="numeric">0</td>
+               <td>00:07:12</td>
+               <td>00:07:30</td>
+              </tr>
+              
+              <tr class="testrun even success">
+               <td>&nbsp;</td>
+               <td class="testrun"><a href="/mpp/static/logs/mus/CloneCLAB2778/20180123_080809_498641/cluster-a/clab1703node14/reports/snmp-pm_report.html">snmp-pm</a></td>
+               <td class="numeric">4</td>
+               <td class="numeric">4</td>
+               <td class="numeric">0</td>
+               <td>00:03:11</td>
+               <td>00:03:25</td>
+              </tr>
+              
+      <tr class="endTotal">
+        <td colspan="2">Total</td>
+        <td class="numeric">24</td>
+        <td class="numeric">24</td>
+        <td class="numeric">0</td>
+        <td>00:41:25</td>
+        <td>00:43:04</td>
+      </tr>
+      
+  </tbody>
+</table>
+
+</p>
+</div>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

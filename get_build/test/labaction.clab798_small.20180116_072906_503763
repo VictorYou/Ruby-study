@@ -1,0 +1,341 @@
+<html>
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=9">
+    <title></title>
+    <link href="/mpp/dynamic/jquery/themes/smoothness/jquery-ui-1.7.1.custom.css?1500440980" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/mpp/dynamic/mpp/calypso.css?1500440962" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/mpp/dynamic/mpp/mpp.css?1500460914" media="screen" rel="stylesheet" type="text/css" />
+    
+    <script src="/mpp/dynamic/jquery/js/jquery-1.4.2.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery-ui-1.7.1.custom.min.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.dataTables.min.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.jeditable.mini.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.simplemodal-1.3.5.min.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.form.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/urlEncode.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.feedback-1.0.1.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.scrollTo-1.4.2.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.tipswift-2.0.1.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery-throttle-1.0.0.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery-misc-plugins.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.disable.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/jquery.jqote2.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/jquery/js/list.min.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-helper.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-authorization.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-feedback.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-validator.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-table-search.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-properties.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-delays.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-broadcast-message.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-version-selector.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/mpp-user-management.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/lazy-scroll.js?1500440980" type="text/javascript"></script>
+<script src="/mpp/dynamic/javascripts/application.js?1500440980" type="text/javascript"></script>
+    <link href="/mpp/dynamic/stylesheets/jquery.tipswift.css?1500440962" media="screen" rel="stylesheet" type="text/css" />
+    
+    <script style="text/javascript">
+      $.mpp.helper.urlRoot = "/mpp/dynamic";
+    </script>
+</head>
+<body>
+<table class="mainHeader" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="logo"><img alt="Corner_logo" src="/mpp/dynamic/webuif/images/corner_logo.png?1500440962" title="ms logo" /></td>
+    <td class="productInformation">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="family">Merlin Production Pipe</td>
+        </tr>
+        <tr>
+          <td class="name">Project: netact</td>
+        </tr>
+      </table>
+    </td>
+    <td class="timestamp">Tue&nbsp;16.01.2018&nbsp;09:40:30&nbsp;(EET)</td>
+  </tr>
+</table>
+<p> <a href="/mpp/dynamic/">MPP home</a> > <a href="/mpp/dynamic/projects/project?project=netact">netact</a> > <a href="/mpp/dynamic/projects/lab?lab=clab798_small&amp;project=netact">clab798_small</a>
+    > <a href="/mpp/dynamic/logs/lab_history?lab=clab798_small&amp;project=netact">lab action history</a>
+    > Lab action
+</p>
+
+<hr>
+<script style="text/javascript">
+  $.mpp.helper.mppPath = "projects/netact/labs/clab798_small";
+  $.mpp.helper.logDir =  "action_dir=20180116_072906_503763";
+</script>
+<table>
+    <tr>
+        <td colspan="2">
+            <h3>SMALL_QL4CM_TEST report</h3>
+        </td>
+    </tr>
+    <tr valign="top">
+        <td>
+            <div class = "labActionInfo"><p>
+<script style="text/javascript">
+function startTime(){ 
+  var stime = $("#duration").text();
+  if ('' == stime)
+    return 0;
+  var h = parseInt(stime.split(":")[0],10);
+  var m = parseInt(stime.split(":")[1],10);
+  var s = parseInt(stime.split(":")[2],10);
+  var count=0
+  var setTime = function() {
+    if(count == 10) return;
+    count ++;
+    s=s+1;
+    if(s>59)  { s=s-60; m=m+1; }
+    if(m>59)  { m=m-60; h=h+1; }
+    $("#duration").text(checkTime(h)+":"+checkTime(m)+":"+checkTime(s));
+    setTimeout(setTime, 1000)
+  }
+    setTime();    
+};
+function checkTime(i){
+  if(i<10)
+    return i="0"+i;
+  else
+    return i;
+};
+window.onload = startTime();
+
+function preserve_click() {
+    $.post("/mpp/dynamic/logs/log_preserve?preserve=true&project=netact&lab=clab798_small&action_dir=20180116_072906_503763", { Action: "post" },
+            function (data, textStatus){
+            }, "script");
+};
+function cancel_preserve_click() {
+    $.post("/mpp/dynamic/logs/log_preserve?preserve=false&project=netact&lab=clab798_small&action_dir=20180116_072906_503763", { Action: "post" },
+            function (data, textStatus){
+            }, "script");
+};
+</script>
+<style type="text/css">
+  div#duration  { display: inline }
+  div#indicator { display: inline }
+</style>
+<table class="tagTable" border="1">
+  <caption><h4>Information&nbsp;(<a href="/mpp/dynamic/logs/stats?mpp_path=logs%2Fnetact%2Fclab798_small%2F20180116_072906_503763">Detailed&nbsp;stats</a>)</h4></caption>
+  <tr>
+    <th>Entity</th>
+    <th>Description</th>
+  </tr>
+  <tr class="odd">
+    <td>Action</td>
+    <td><a href="/mpp/dynamic/logs/lab_action?action_dir=20180116_072906_503763&amp;lab=clab798_small&amp;project=netact">SMALL_QL4CM_TEST</a>
+      (<a href="/mpp/dynamic/projects/lab?lab=clab798_small&amp;project=netact">clab798_small</a>)</td>
+  </tr>
+  <tr class="even">
+    <td>Description</td>
+    <td>Tests(1/6)</td>
+  </tr>
+  <tr class="odd">
+    <td>Result</td>
+    <td>green</td>
+  </tr>
+  
+  
+  
+  <tr class="even">
+    <td>Start</td>
+    <td>Tue 16.01.2018 07:29:06</td>
+  </tr>
+  <tr class="odd">
+    <td>Duration</td>
+    <td>
+    
+      00:07:01
+    
+    </td>
+  </tr>
+  
+    <tr class="even">
+      <td>Lab action files</td>
+      <td>
+        
+            <a href="/mpp/static/logs/netact/clab798_small/20180116_072906_503763/">Directory</a>,
+                
+        
+            <a href="/mpp/dynamic/logs/lab_action_log?action_dir=20180116_072906_503763&amp;lab=clab798_small&amp;project=netact">labaction.log</a>,
+            
+        
+            <a href="/mpp/static/logs/netact/clab798_small/20180116_072906_503763/statistics.xml">statistics.xml</a>
+                
+        
+      </td>
+    </tr>
+  
+
+  
+      <tr class="odd">
+        <td>Logs Removal Date</td>
+        
+            <td id="log_expired_date">Thu 15.02.2018 07:36:07</td>
+        
+      </tr>
+      <tr class="even">
+        <td>Logs Preservation</td>
+        <td id="log_preservation"><a href="javascript:void(0);" onclick="preserve_click();">Preserve logs for this labaction</a></td>
+      </tr>
+  
+</table>
+</p>
+<p>
+    <table class="tagTable" border="1">
+        <caption><h4>Used RIS components</h4></caption>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Links</th>
+        </tr>
+        </thead>
+        
+            <tr class="odd">
+                <td><a href="/mpp/dynamic/packages/version?component=viis-lab-scripts&amp;group=mpp&amp;version=1174">mpp/viis-lab-scripts/1174</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=viis-lab-scripts&amp;group=mpp&amp;project=netact&amp;version=1174">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="even">
+                <td><a href="/mpp/dynamic/packages/version?component=mpp-scripts&amp;group=mpp&amp;version=907">mpp/mpp-scripts/907</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=mpp-scripts&amp;group=mpp&amp;project=netact&amp;version=907">Version history</a>
+                </td>
+            </tr>
+        
+            <tr class="odd">
+                <td><a href="/mpp/dynamic/packages/version?component=product&amp;group=netact&amp;version=99.18.01.0.211">netact/product/99.18.01.0.211</a></td>
+                <td><a href="/mpp/dynamic/logs/version_history?component=product&amp;group=netact&amp;project=netact&amp;version=99.18.01.0.211">Version history</a>
+                </td>
+            </tr>
+        
+    </table>
+
+</p>
+<p>
+<script style="text/javascript">
+function startTime(){ 
+  var stime = $("#sduration").text();
+  if ('' == stime)
+    return 0;
+  var h = parseInt(stime.split(":")[0],10);
+  var m = parseInt(stime.split(":")[1],10);
+  var s = parseInt(stime.split(":")[2],10);
+  var count=0
+  var setTime = function() {
+    if(count == 10) return;
+    count ++;
+    s=s+1;
+    if(s>59)  { s=s-60; m=m+1; }
+    if(m>59)  { m=m-60; h=h+1; }
+    $("#sduration").text(checkTime(h)+":"+checkTime(m)+":"+checkTime(s));
+    setTimeout(setTime, 1000)
+  }
+    setTime();    
+};
+function checkTime(i){
+  if(i<10)
+    return i="0"+i;
+  else
+    return i;
+};
+window.onload = startTime();
+</script>
+<style type="text/css">
+  div#sduration  { display: inline }
+  div#sindicator { display: inline }
+</style>
+    <table class="tagTable" border="1">
+        <caption><h4>Checkpoints</h4></caption>
+        <tr>
+            <th>Event</th>
+            <th>Duration</th>
+        </tr>
+        
+            <tr class="odd">
+                <td>Run tests</td>
+                <td>
+                    00:05:50
+                    
+                </td>
+            </tr>
+        
+            <tr class="even">
+                <td>process logs</td>
+                <td>
+                    00:00:00
+                    
+                </td>
+            </tr>
+        
+        <tr class="total">
+            <td>Total time</td>
+            <td>00:07:01</td>
+        </tr>
+    </table>
+</p>
+<p>
+<table border="0" cellpadding="0" cellspacing="0" class="tagTable robotTable" style="border-color:green;">
+  <caption><h4>Test results (<span class="webActionsContainer"></span>)</h4></caption>
+  <thead>
+  <tr>
+    <th>Server(s)</th>
+    <th>Name</th>
+    <th>Tests</th>
+    <th>Passed</th>
+    <th>Failed</th>
+    <th>Runtime</th>
+    <th>Real time</th>
+  </tr>
+  </thead>
+  <tbody>
+    
+      <tr class="tester total">
+       <td class="tester" valign="top">nac8tex01->cluster-a</td>
+       <td>Total</td>
+       <td class="numeric">7</td>
+       <td class="numeric">1</td>
+       <td class="numeric">6</td>
+       <td>00:03:20</td>
+       <td>00:00:00</td>
+      </tr>
+      
+          
+          
+              <tr class="testrun odd success">
+               <td>&nbsp;</td>
+               <td class="testrun"><a href="/mpp/static/logs/netact/clab798_small/20180116_072906_503763/reports/nac8tex01/neve-smoke-7467-robot-testcases_20180116073148/NeVe-TA_report.html">Neve-Smoke-7467-Robot-Testcases</a></td>
+               <td class="numeric">7</td>
+               <td class="numeric">1</td>
+               <td class="numeric">6</td>
+               <td>00:03:20</td>
+               <td>00:00:00</td>
+              </tr>
+              
+      <tr class="endTotal">
+        <td colspan="2">Total</td>
+        <td class="numeric">7</td>
+        <td class="numeric">1</td>
+        <td class="numeric">6</td>
+        <td>00:03:20</td>
+        <td>00:00:00</td>
+      </tr>
+      
+  </tbody>
+</table>
+
+</p>
+</div>
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
