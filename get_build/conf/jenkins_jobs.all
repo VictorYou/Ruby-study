@@ -132,7 +132,7 @@ GATE-nbi-component-build-deploy-test
 GATE-nbives-component-build-deploy-test
 GATE-neve_ta_rf-component-build-deploy-test
 GATE-ngm-component-build-deploy-test
-GATE-ko_ads-component-build-deploy-test
+GATE-nokia_ads-component-build-deploy-test
 GATE-npm-component-build-deploy-test
 GATE-npm_deployment_specification-component-build-deploy-test
 GATE-ntcapp-component-build-deploy-test

@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>core</artifactId>
-        <groupId>com.ms.oss.nbi3gcpm.ftirp</groupId>
+        <groupId>com.nsn.oss.nbi3gcpm.ftirp</groupId>
         <version>DYNAMIC-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -69,11 +69,11 @@
             <artifactId>servicemix-common</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.ms.obs.mf.lockmanager</groupId>
+            <groupId>com.nsn.obs.mf.lockmanager</groupId>
             <artifactId>LockManager</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.ms.obs.mw.medfra</groupId>
+            <groupId>com.nsn.obs.mw.medfra</groupId>
             <artifactId>mf-core</artifactId>
         </dependency>
         <dependency>
@@ -101,11 +101,11 @@
             <artifactId>easymockclassextension</artifactId>
         </dependency>
         <dependency>
-              <groupId>com.ms.oss.nbi3gcpm.common-utils</groupId>
+              <groupId>com.nsn.oss.nbi3gcpm.common-utils</groupId>
               <artifactId>common-utils</artifactId>
         </dependency>
         <dependency>
-              <groupId>com.ms.oss.nbi3gcpm.utils</groupId>
+              <groupId>com.nsn.oss.nbi3gcpm.utils</groupId>
               <artifactId>pm-reporter-utils</artifactId>
              <scope>provided</scope>
         </dependency>
@@ -115,27 +115,27 @@
 	    </dependency>
 	    
 	    <dependency>
-			<groupId>com.ms.oss.interfaces.jbiselfmon</groupId>
+			<groupId>com.nsn.oss.interfaces.jbiselfmon</groupId>
 			<artifactId>selfmon-fm-api</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.ko.j2ssp.comp</groupId>
+			<groupId>com.nokia.j2ssp.comp</groupId>
 			<artifactId>esymac-apiutils</artifactId>
 			<scope>test</scope>
 		</dependency>
  		<dependency>
-			<groupId>com.ko.j2ssp.comp</groupId>
+			<groupId>com.nokia.j2ssp.comp</groupId>
 			<artifactId>esymac</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.ko.j2ssp.service</groupId>
+			<groupId>com.nokia.j2ssp.service</groupId>
 			<artifactId>framework</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.ko.j2ssp.comp</groupId>
+			<groupId>com.nokia.j2ssp.comp</groupId>
 			<artifactId>cfs</artifactId>
 			<scope>test</scope>
 		</dependency>

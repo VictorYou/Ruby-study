@@ -1,8 +1,8 @@
 CONNECTED(00000003)
 ---
 Certificate chain
- 0 s:/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.ms-net.net/emailAddress=root@eseecisav71.emea.ms-net.net
-   i:/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.ms-net.net/emailAddress=root@eseecisav71.emea.ms-net.net
+ 0 s:/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.nsn-net.net/emailAddress=root@eseecisav71.emea.nsn-net.net
+   i:/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.nsn-net.net/emailAddress=root@eseecisav71.emea.nsn-net.net
 ---
 Server certificate
 -----BEGIN CERTIFICATE-----
@@ -30,8 +30,8 @@ uWTeqPImdHr4PimQGlR9cWrqf8V3uW8114HlYcIXN9H7Sf7Qjr/dErS6SKgeSiPe
 7zAld/bkLmSYolRseoFuQwEi0n9VmEVkKaKbookiTYJebAQA05mDWQ6dJgWB5+FV
 UY1tUWJI8bN2WqlzMbQ=
 -----END CERTIFICATE-----
-subject=/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.ms-net.net/emailAddress=root@eseecisav71.emea.ms-net.net
-issuer=/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.ms-net.net/emailAddress=root@eseecisav71.emea.ms-net.net
+subject=/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.nsn-net.net/emailAddress=root@eseecisav71.emea.nsn-net.net
+issuer=/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=eseecisav71.emea.nsn-net.net/emailAddress=root@eseecisav71.emea.nsn-net.net
 ---
 No client certificate CA names sent
 Peer signing digest: SHA512

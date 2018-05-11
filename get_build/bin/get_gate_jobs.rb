@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'log'
 
 system("rm -rf index.html")
-unless system("wget --no-check-certificate https://eslinb86.emea.ms-net.net:8080/view/Gate/")
+unless system("wget --no-check-certificate https://eslinb86.emea.nsn-net.net:8080/view/Gate/")
   log "fail to download page"
 end
 

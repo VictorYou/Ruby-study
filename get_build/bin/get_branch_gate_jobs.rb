@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'log'
 
 system("rm -rf index.html")
-unless system("wget --no-check-certificate https://euca-10-131-38-213.eucalyptus.es-ka-eu-dhn-09.eecloud.ms-net.net:8080/view/Branch_Gate/")
+unless system("wget --no-check-certificate https://euca-10-131-38-213.eucalyptus.es-ka-eu-dhn-09.eecloud.nsn-net.net:8080/view/Branch_Gate/")
   log "fail to download page"
 end
 

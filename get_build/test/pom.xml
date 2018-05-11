@@ -3,14 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion> 
-	<groupId>com.ko.oss.isdk.mediation.ftppm</groupId>
+	<groupId>com.nokia.oss.isdk.mediation.ftppm</groupId>
 	<artifactId>isdk-ftp-pm</artifactId>
 	<name>ISDK-FTP-PM</name>
 	<version>DYNAMIC-SNAPSHOT</version>
 	<packaging>pom</packaging>
     
     <parent>
-        <groupId>com.ms.mpp</groupId>
+        <groupId>com.nsn.mpp</groupId>
         <artifactId>base</artifactId>
         <version>1.7.5</version>
     </parent>
@@ -78,7 +78,7 @@
 						<configuration>
 							<outputDirectory>${main.basedir}/dependencies</outputDirectory>
 							<includeScope>runtime</includeScope>
-							<excludeGroupIds>com.ko.oss.isdk.common</excludeGroupIds>
+							<excludeGroupIds>com.nokia.oss.isdk.common</excludeGroupIds>
 						</configuration>
 					</execution>
 					<execution>

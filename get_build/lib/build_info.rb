@@ -6,7 +6,7 @@ require 'json'
 
 # get gate build hash
 # [
-#   {'GATE-med_core3-component-build-deploy-test'=>[{:url => 'https://eslinb86.emea.ms-net.net:8080/job/GATE-nass-component-build-deploy-test/1047', :module_to_build => '/workspace/netact/nass/SMU/implementation', :change => '184333', :change_ids => '184333,1', :result => 'SUCCESS', :end_time => '10:29:39', :res_id => 'nass/smu_platform1_git/18.0.0.96'}]
+#   {'GATE-med_core3-component-build-deploy-test'=>[{:url => 'https://eslinb86.emea.nsn-net.net:8080/job/GATE-nass-component-build-deploy-test/1047', :module_to_build => '/workspace/netact/nass/SMU/implementation', :change => '184333', :change_ids => '184333,1', :result => 'SUCCESS', :end_time => '10:29:39', :res_id => 'nass/smu_platform1_git/18.0.0.96'}]
 #   }
 # ]
 #
@@ -118,7 +118,7 @@ end
 
 module GitRepo
   Git_home_dir = '/home/viyou/repo'
-  Gerrit_repo_base = 'ssh://viyou@gerrite1.ext.net.ko.com:8282/netact'
+  Gerrit_repo_base = 'ssh://viyou@gerrite1.ext.net.nokia.com:8282/netact'
 
   def get_repo(project)
     system(get_repo_cmd(project))
@@ -388,11 +388,11 @@ class SonarBuildInfo < BuildInfo
   end
 
   def build_info_url
-    @build_info_url ||= 'https://eseecisav71.emea.ms-net.net:9000/api/measures/component_tree?asc=false&ps=100&metricSortFilter=withMeasuresOnly&p=1&s=metric%2Cname&metricSort=test_execution_time&baseComponentKey=' + @gId + '%3A' + @aId + '&metricKeys=test_execution_time&strategy=leaves'
+    @build_info_url ||= 'https://eseecisav71.emea.nsn-net.net:9000/api/measures/component_tree?asc=false&ps=100&metricSortFilter=withMeasuresOnly&p=1&s=metric%2Cname&metricSort=test_execution_time&baseComponentKey=' + @gId + '%3A' + @aId + '&metricKeys=test_execution_time&strategy=leaves'
   end
 
   def build_url
-    @build_url ||= 'https://eseecisav71.emea.ms-net.net:9000/component_measures/metric/test_execution_time/list?id=' + @gId + '%3A' + @aId
+    @build_url ||= 'https://eseecisav71.emea.nsn-net.net:9000/component_measures/metric/test_execution_time/list?id=' + @gId + '%3A' + @aId
   end
 
   def file_from_url(url)
@@ -435,7 +435,7 @@ class SonarUTNoBuildInfo < BuildInfo
   def build_info_url
     log "#{__FILE__}, #{__LINE__}: @gId: " << @gId, 'debug'
     log "#{__FILE__}, #{__LINE__}: @file: " << @file, 'debug'
-    @build_info_url ||= 'https://eseecisav71.emea.ms-net.net:9000/api/measures/component?additionalFields=periods&componentKey=' + @gId + '%3A' + @aId + '%3A' + @file.gsub(/\//, '%2F') + '&metricKeys=new_technical_debt%2Cblocker_violations%2Cbugs%2Cburned_budget%2Cbusiness_value%2Cclasses%2Ccode_smells%2Ccomment_lines%2Ccomment_lines_density%2Ccomplexity%2Cclass_complexity%2Cfile_complexity%2Cfunction_complexity%2Cbranch_coverage%2Cnew_it_branch_coverage%2Cnew_branch_coverage%2Cconfirmed_issues%2Ccoverage%2Cnew_it_coverage%2Cnew_coverage%2Ccritical_violations%2Cpitest_mutations_detected%2Cdirectories%2Cduplicated_blocks%2Cduplicated_files%2Cduplicated_lines%2Cduplicated_lines_density%2Ceffort_to_reach_maintainability_rating_a%2Cfalse_positive_issues%2Cfiles%2Cfunctions%2Cgenerated_lines%2Cgenerated_ncloc%2Chigh_severity_vulns%2Cinfo_violations%2Cinherited_risk_score%2Cviolations%2Cit_branch_coverage%2Cit_coverage%2Cit_line_coverage%2Cit_uncovered_conditions%2Cit_uncovered_lines%2Cpitest_mutations_killed%2Cline_coverage%2Cnew_it_line_coverage%2Cnew_line_coverage%2Clines%2Cncloc%2Clines_to_cover%2Cnew_it_lines_to_cover%2Cnew_lines_to_cover%2Clow_severity_vulns%2Csqale_rating%2Cmajor_violations%2Cmedium_severity_vulns%2Cpitest_mutations_memoryError%2Cminor_violations%2Cpitest_mutations_coverage%2Cnew_blocker_violations%2Cnew_bugs%2Cnew_code_smells%2Cnew_critical_violations%2Cnew_info_violations%2Cnew_violations%2Cnew_major_violations%2Cnew_minor_violations%2Cnew_vulnerabilities%2Cpitest_mutations_noCoverage%2Copen_issues%2Coutage_risks_total%2Coutage_risks_blocker%2Coutage_risks_critical%2Coutage_risks_info%2Coutage_risks_major%2Coutage_risks_minor%2Coverall_branch_coverage%2Cnew_overall_branch_coverage%2Coverall_coverage%2Cnew_overall_coverage%2Coverall_line_coverage%2Cnew_overall_line_coverage%2Cnew_overall_lines_to_cover%2Coverall_uncovered_conditions%2Cnew_overall_uncovered_conditions%2Coverall_uncovered_lines%2Cnew_overall_uncovered_lines%2Cprojects%2Cpublic_api%2Cpublic_documented_api_density%2Cpublic_undocumented_api%2Calert_status%2Creleasability_rating%2Creliability_rating%2Creliability_remediation_effort%2Cnew_reliability_remediation_effort%2Creopened_issues%2Csecurity_rating%2Csecurity_remediation_effort%2Cnew_security_remediation_effort%2Cskipped_tests%2Cstatements%2Cpitest_mutations_survived%2Cteam_size%2Csqale_index%2Csqale_debt_ratio%2Cnew_sqale_debt_ratio%2Cpitest_mutations_timedOut%2Ctotal_dependencies%2Cpitest_mutations_total%2Creleasability_effort%2Ctotal_vulnerabilities%2Cuncovered_conditions%2Cnew_it_uncovered_conditions%2Cnew_uncovered_conditions%2Cuncovered_lines%2Cnew_it_uncovered_lines%2Cnew_uncovered_lines%2Ctest_execution_time%2Ctest_errors%2Ctest_failures%2Ctest_success_density%2Ctests%2Cpitest_mutations_unknown%2Cvulnerabilities%2Cvulnerable_component_ratio%2Cvulnerable_dependencies%2Cwont_fix_issues'
+    @build_info_url ||= 'https://eseecisav71.emea.nsn-net.net:9000/api/measures/component?additionalFields=periods&componentKey=' + @gId + '%3A' + @aId + '%3A' + @file.gsub(/\//, '%2F') + '&metricKeys=new_technical_debt%2Cblocker_violations%2Cbugs%2Cburned_budget%2Cbusiness_value%2Cclasses%2Ccode_smells%2Ccomment_lines%2Ccomment_lines_density%2Ccomplexity%2Cclass_complexity%2Cfile_complexity%2Cfunction_complexity%2Cbranch_coverage%2Cnew_it_branch_coverage%2Cnew_branch_coverage%2Cconfirmed_issues%2Ccoverage%2Cnew_it_coverage%2Cnew_coverage%2Ccritical_violations%2Cpitest_mutations_detected%2Cdirectories%2Cduplicated_blocks%2Cduplicated_files%2Cduplicated_lines%2Cduplicated_lines_density%2Ceffort_to_reach_maintainability_rating_a%2Cfalse_positive_issues%2Cfiles%2Cfunctions%2Cgenerated_lines%2Cgenerated_ncloc%2Chigh_severity_vulns%2Cinfo_violations%2Cinherited_risk_score%2Cviolations%2Cit_branch_coverage%2Cit_coverage%2Cit_line_coverage%2Cit_uncovered_conditions%2Cit_uncovered_lines%2Cpitest_mutations_killed%2Cline_coverage%2Cnew_it_line_coverage%2Cnew_line_coverage%2Clines%2Cncloc%2Clines_to_cover%2Cnew_it_lines_to_cover%2Cnew_lines_to_cover%2Clow_severity_vulns%2Csqale_rating%2Cmajor_violations%2Cmedium_severity_vulns%2Cpitest_mutations_memoryError%2Cminor_violations%2Cpitest_mutations_coverage%2Cnew_blocker_violations%2Cnew_bugs%2Cnew_code_smells%2Cnew_critical_violations%2Cnew_info_violations%2Cnew_violations%2Cnew_major_violations%2Cnew_minor_violations%2Cnew_vulnerabilities%2Cpitest_mutations_noCoverage%2Copen_issues%2Coutage_risks_total%2Coutage_risks_blocker%2Coutage_risks_critical%2Coutage_risks_info%2Coutage_risks_major%2Coutage_risks_minor%2Coverall_branch_coverage%2Cnew_overall_branch_coverage%2Coverall_coverage%2Cnew_overall_coverage%2Coverall_line_coverage%2Cnew_overall_line_coverage%2Cnew_overall_lines_to_cover%2Coverall_uncovered_conditions%2Cnew_overall_uncovered_conditions%2Coverall_uncovered_lines%2Cnew_overall_uncovered_lines%2Cprojects%2Cpublic_api%2Cpublic_documented_api_density%2Cpublic_undocumented_api%2Calert_status%2Creleasability_rating%2Creliability_rating%2Creliability_remediation_effort%2Cnew_reliability_remediation_effort%2Creopened_issues%2Csecurity_rating%2Csecurity_remediation_effort%2Cnew_security_remediation_effort%2Cskipped_tests%2Cstatements%2Cpitest_mutations_survived%2Cteam_size%2Csqale_index%2Csqale_debt_ratio%2Cnew_sqale_debt_ratio%2Cpitest_mutations_timedOut%2Ctotal_dependencies%2Cpitest_mutations_total%2Creleasability_effort%2Ctotal_vulnerabilities%2Cuncovered_conditions%2Cnew_it_uncovered_conditions%2Cnew_uncovered_conditions%2Cuncovered_lines%2Cnew_it_uncovered_lines%2Cnew_uncovered_lines%2Ctest_execution_time%2Ctest_errors%2Ctest_failures%2Ctest_success_density%2Ctests%2Cpitest_mutations_unknown%2Cvulnerabilities%2Cvulnerable_component_ratio%2Cvulnerable_dependencies%2Cwont_fix_issues'
   end
 
   def file_from_url(url = '')
