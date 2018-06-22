@@ -281,32 +281,33 @@ describe "test BuildInfo class to get build hash" do
   end
 
   it "should save the pom file into poms" do
-    @tester = PomList.new
+    extend PomList
     file = '/a/implementation/pom.xml'
-    PomList.expects(:directory?).with(file).returns false
-    @tester.get_pom(file)
-    expect(@tester.poms).to eq [file]
+    expects(:directory?).with(file).returns false
+    expect(get_pom(file)).to eq [file]
   end
 
   it "should not save the pom file not under implementation" do
-    @tester = PomList.new
-    PomList.expects(:directory?).with('/a/pom.xml').returns false
-    @tester.get_pom('/a/pom.xml')
-    expect(@tester.poms).to eq []
+    extend PomList
+    expects(:directory?).with('/a/pom.xml').returns false
+    expect(get_pom('/a/pom.xml')).to eq []
   end
 
   it "should not save the pom file into poms" do
-    @tester = PomList.new
+    extend PomList
     dir = '/a/implementation/b/implementation/pom.xml'
-    @tester.instance_eval {@poms << '/a/implementation/pom.xml'}
-    PomList.expects(:directory?).with(dir).returns false
-    @tester.get_pom(dir)
-    expect(@tester.poms).to eq ['/a/implementation/pom.xml']
+    expects(:directory?).with(dir).returns false
+    expect(get_pom(dir, ['/a/implementation/pom.xml'])).to eq ['/a/implementation/pom.xml']
   end
 
   it "should get group id and artificat id from a pom file" do
     @tester = SonarBuildInfoList.new({:project_list=>[]})
     expect(@tester.get_id_from_pom('pom.xml')).to eq ({:gId=>'com.nokia.oss.isdk.mediation.ftppm', :aId=>'isdk-ftp-pm'})
+  end
+
+  it "should get grouop id with newline removed" do
+    @tester = SonarBuildInfoList.new({:project_list=>[]})
+    expect(@tester.get_id_from_pom('pom_newline.xml')).to eq ({:gId=>'com.nsn.eventpipe.se.eventcorrelator', :aId=>'gep-event-correlation-se'})
   end
 
   it "should get group id from parent if it does not have" do
@@ -379,13 +380,15 @@ describe "test BuildInfo class to get build hash" do
   end
 
   it "should return directory" do
-    expect(PomList.parent_path('/a/b/c/d/x')).to eq '/a/b/c/d'
+    extend PomList
+    expect(parent_path('/a/b/c/d/x')).to eq '/a/b/c/d'
   end
 
   it "should return the nearest pom.xml above path" do
-    PomList.expects(:directory?).returns true
+    extend PomList
+    expects(:directory?).returns true
     File.expects(:exists?).returns true
-    expect(PomList.pom_above('/a/b/c')).to eq '/a/b/c/pom.xml'
+    expect(pom_above('/a/b/c')).to eq '/a/b/c/pom.xml'
   end
 
 end

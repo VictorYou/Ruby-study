@@ -2,7 +2,7 @@
 require 'date'
 
 # Determine the current version of the software
-version = '1.0.6'
+version = '1.0.9'
 
 Gem::Specification.new do |spec|
   spec.name        = 'get_build'

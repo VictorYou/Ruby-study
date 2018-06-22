@@ -3,6 +3,7 @@ require 'nokogiri'
 require 'pathname'
 require 'xml/mapping'
 require 'json'
+require 'fileutils'
 
 # get gate build hash
 # [
@@ -117,10 +118,11 @@ class BuildInfoList
 end
 
 module GitRepo
-  Git_home_dir = '/home/viyou/repo'
-  Gerrit_repo_base = 'ssh://viyou@gerrite1.ext.net.nokia.com:8282/netact'
+  Git_home_dir = "/home/#{ENV['USER']}/repo"
+  Gerrit_repo_base = "ssh://#{ENV['USER']}@gerrite1.ext.net.nokia.com:8282/netact"
 
   def get_repo(project)
+    FileUtils.mkdir_p Git_home_dir unless File.exists? Git_home_dir
     system(get_repo_cmd(project))
   end
 
@@ -137,9 +139,43 @@ module GitRepo
   end
 end
 
+module PomList
+  def get_pom(path, poms=[])
+    if directory? path
+      dir(path).each {|p| get_pom p, poms}
+    elsif /\/implementation\/pom.xml/ =~ path
+      poms.delete_if {|p| File.dirname(p).start_with? File.dirname(path)}
+      return poms if poms.select {|p| File.dirname(path).start_with? File.dirname(p)}.size > 0
+      poms << path
+    end
+    poms
+  end
+
+  def pom_above(path)
+    log "#{__FILE__}, #{__LINE__}: path: " << path, 'debug'
+    if directory?(path) && File.exists?(path + '/pom.xml') 
+      return path + '/pom.xml' 
+    end  
+    pom_above parent_path(path)
+  end
+
+  def directory?(path)
+    Pathname.new(path).directory?
+  end
+
+  def parent_path(path)
+    Pathname.new(path).dirname.to_s
+  end
+
+  def dir(path)
+    Dir[path + '/*']
+  end
+end
+
 class SonarBuildInfoList < BuildInfoList
   include FlatHashList
   include GitRepo
+  include PomList
 
   attr_reader :hash_list
   attr_reader :poms
@@ -192,7 +228,7 @@ class SonarBuildInfoList < BuildInfoList
       log "#{__FILE__}, #{__LINE__}: search pattern: " << GitRepo::Git_home_dir + '/' + options[:sp] + '/**/' + h[:file], 'debug'
       Dir[GitRepo::Git_home_dir + '/' + options[:sp] + '/**/' + h[:file]].each do |full_path|
         log "#{__FILE__}, #{__LINE__}: full_path: " << full_path, 'debug'
-        pom_file = PomList.pom_above(full_path)
+        pom_file = pom_above(full_path)
         pom_id = get_id_from_pom pom_file
         next if pom_id[:gId].nil? or pom_id[:aId].nil?
         begin
@@ -213,7 +249,7 @@ class SonarBuildInfoList < BuildInfoList
     get_repo(project)
 
     log "#{__FILE__}, #{__LINE__}: " << Git_home_dir + '/' + project, 'debug'
-    poms = PomList.new.get_pom(Git_home_dir + '/' + project).poms
+    poms = get_pom(Git_home_dir + '/' + project)
     log "#{__FILE__}, #{__LINE__}: poms: " << poms.inspect, 'debug'
     log "#{__FILE__}, #{__LINE__}: poms.size: " << poms.size.to_s, 'debug'
     poms.each {|pm| id_list << get_id_from_pom(pm)}
@@ -229,6 +265,8 @@ class SonarBuildInfoList < BuildInfoList
       node = PomId.load_from_xml(REXML::Document.new(content).root)
       gId = node.gId.nil? ? node.parent[0].gId : node.gId
       aId = node.aId.nil? ? node.parent[0].aId : node.aId
+      gId.gsub!(/\s/,'')
+      aId.gsub!(/\s/,'')
       log "#{__FILE__}, #{__LINE__}: gId: " << gId << ", aId: " << aId, 'debug'
       {:gId=>gId, :aId=>aId}
     rescue Exception=>e
@@ -244,45 +282,6 @@ include XML::Mapping
 text_node :aId, "artifactId", :default_value=>nil
 text_node :gId, "groupId", :default_value=>nil
 array_node :parent, 'parent', :default_value=>[], :class=>PomId
-end
-
-class PomList
-  attr_reader :poms
-
-  def initialize
-    @poms = []
-  end
-
-  def get_pom(path)
-    if PomList.directory? path
-      dir(path).each {|p| get_pom p}
-    elsif /\/implementation\/pom.xml/ =~ path
-      @poms -= @poms.select {|p| File.dirname(p).start_with? File.dirname(path)}
-      return if @poms.select {|p| File.dirname(path).start_with? File.dirname(p)}.size > 0
-      @poms << path
-    end
-    self
-  end
-
-  def self.pom_above(path)
-    log "#{__FILE__}, #{__LINE__}: path: " << path, 'debug'
-    if directory?(path) && File.exists?(path + '/pom.xml') 
-      return path + '/pom.xml' 
-    end  
-    pom_above parent_path(path)
-  end
-
-  def self.directory?(path)
-    Pathname.new(path).directory?
-  end
-
-  def self.parent_path(path)
-    Pathname.new(path).dirname.to_s
-  end
-
-  def dir(path)
-    Dir[path + '/*']
-  end
 end
 
 class JenkinsBuildInfoList < BuildInfoList
